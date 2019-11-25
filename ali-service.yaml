@@ -1,8 +1,10 @@
 apiVersion: v1
 kind: Pod
 metadata:
+  name: ali-service
   labels:
     app: ali-service
+  generateName: ali-service-
 spec:
   containers:
     - name: ali-service
@@ -10,7 +12,8 @@ spec:
       ports:
         - containerPort: 8080
       resources:
-        requests:
+        limits:
+          name: test
           cpu: 200m
           memory: 200Mi
       volumeMounts:
