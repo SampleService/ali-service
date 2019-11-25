@@ -81,7 +81,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
                     <fork>true</fork>
-                    <mainClass>com.sampleservice.ALiService</mainClass>
+                    <mainClass>com.sampleservice.ALiService.ApplicationMain</mainClass>
                 </configuration>
                 <executions>
                     <execution>
