@@ -22,7 +22,10 @@ public class MainController extends MObject {
     public MResponse payFunction(@RequestBody MResponse requestData) {
         MResponse result = new MResponse();
         result.set("msg", "/pay");
-        MBaseUtils.generateStringInKBSize(5, result);
+
+        if (requestData.get("interval") != null) {
+            MBaseUtils.generateStringInKBSize(5, result, (int) requestData.get("interval"));
+        }
         return result;
     }
 
@@ -33,7 +36,10 @@ public class MainController extends MObject {
     public MResponse marketFunction(@RequestBody MResponse requestData) {
         MResponse result = new MResponse();
         result.set("msg", "/market");
-        MBaseUtils.generateStringInKBSize(5000, result);
+
+        if (requestData.get("interval") != null) {
+            MBaseUtils.generateStringInKBSize(1000, result, (int) requestData.get("interval"));
+        }
         return result;
     }
 
@@ -44,7 +50,10 @@ public class MainController extends MObject {
     public MResponse canteenFunction(@RequestBody MResponse requestData) {
         MResponse result = new MResponse();
         result.set("msg", "/canteen");
-        MBaseUtils.generateStringInKBSize(3000, result);
+
+        if (requestData.get("interval") != null) {
+            MBaseUtils.generateStringInKBSize(2000, result, (int) requestData.get("interval"));
+        }
         return result;
     }
 }
