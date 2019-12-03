@@ -5,18 +5,12 @@ metadata:
   namespace: kube-test
   labels:
     app: ali-service
-  generateName: ali-service-
 spec:
   containers:
     - name: ali-service
       image: 192.168.1.104:5000/septemberhx/ali-service:v1.0
       ports:
         - containerPort: 8080
-      resources:
-        limits:
-          name: test
-          cpu: 200m
-          memory: 200Mi
       volumeMounts:
         - mountPath: /var/log/mclient
           name: log-volume

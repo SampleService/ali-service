@@ -1,5 +1,6 @@
 package com.sampleservice.ALiService.controller;
 
+import com.sampleservice.ALiService.utils.MBaseUtils;
 import com.septemberhx.common.base.MResponse;
 import com.septemberhx.mclient.annotation.MApiFunction;
 import com.septemberhx.mclient.annotation.MRestApiType;
@@ -21,6 +22,7 @@ public class MainController extends MObject {
     public MResponse payFunction(@RequestBody MResponse requestData) {
         MResponse result = new MResponse();
         result.set("msg", "/pay");
+        MBaseUtils.generateStringInKBSize(5, result);
         return result;
     }
 
@@ -31,6 +33,7 @@ public class MainController extends MObject {
     public MResponse marketFunction(@RequestBody MResponse requestData) {
         MResponse result = new MResponse();
         result.set("msg", "/market");
+        MBaseUtils.generateStringInKBSize(5000, result);
         return result;
     }
 
@@ -41,6 +44,7 @@ public class MainController extends MObject {
     public MResponse canteenFunction(@RequestBody MResponse requestData) {
         MResponse result = new MResponse();
         result.set("msg", "/canteen");
+        MBaseUtils.generateStringInKBSize(3000, result);
         return result;
     }
 }
